@@ -17,14 +17,24 @@
 	);
 
 	Backbone.Stickit.addHandler({
-		selector: 'paper-dropdown',
+		selector: 'paper-dropdown,paper-radio-group',
 		events: ['core-select'],
 		update: function ($el, val) {
-			console.log("HERE", val);
 			$el[0].selected = val;
 		},
 		getVal: function ($el) {
 			return $el[0].selected;
+		}
+	});
+
+	Backbone.Stickit.addHandler({
+		selector: 'paper-checkbox',
+		events: ['core-change'],
+		update: function ($el, val) {
+			$el[0].checked = val;
+		},
+		getVal: function ($el) {
+			return $el[0].checked;
 		}
 	});
 
@@ -35,7 +45,7 @@
 			'#paper-input-text': 'name',
 			'#input-paper-dropdown': 'type',
 
-			'#paper-radio-group': 'selectedIndex',
+			'#input-paper-radio-group': 'selectedIndex',
 
 			'#paper-checkbox': 'isChecked',
 			'#checkbox': 'isChecked',
@@ -48,12 +58,13 @@
 					'<h2>Checkbox test</h2>' +
 					'<paper-checkbox id="paper-checkbox" label="Checkbox"></paper-checkbox><br />' +
 					'<input id="checkbox" label="Checkbox" type="checkbox"></paper-checkbox><br />' +
+					'<a id="link-4" href="javascript:void(0);">set isChecked true</a><br /><br />' +
 
-					'<paper-radio-group id="paper-radio-group">' +
+					'<paper-radio-group id="input-paper-radio-group">' +
 					'<paper-radio-button name="always" label="Always"></paper-radio-button>' +
 					'<paper-radio-button name="pluggedin" label="Only when plugged in"></paper-radio-button>' +
-					'</paper-radio-group>' +
-					'<a id="link-4" href="javascript:void(0);">set isChecked true</a>' +
+					'</paper-radio-group><br />' +
+					'<a id="link-3" href="javascript:void(0);">set selectedIndex 1</a><br /><br />' +
 
 					'<paper-input id="paper-input-text" label="Type something"></paper-input><br />' +
 					'<input type="text" id="input-text" /><br />' +
@@ -64,7 +75,6 @@
 					'</paper-dropdown>' +
 
 					'<br><a id="link-1" href="javascript:void(0);">set name "PAOLO"</a> - <a id="link-2" href="javascript:void(0);">set type "second"</a><br><br>' +
-					'<br><a id="link-3" href="javascript:void(0);">set selectedIndex 1</a>' +
 
 					'<h2>Log</h2>' +
 					'<div id="log"></div>'
