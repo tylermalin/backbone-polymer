@@ -1,0 +1,23 @@
+{
+  "name": "backbone-polymer",
+  "version": "0.0.1",
+  "description": "Experiemnts and demos with polymer and backbone ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fincluster/backbone-polymer.git"
+  },
+  "keywords": [
+    "backbone",
+    "polymer"
+  ],
+	"author": [
+		"Paolo Ardoino <Paolo.Ardoino@gmail.com>",
+		"Nikos katsikanis <nkatsikanis@gmail.com>"
+	],
+
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fincluster/backbone-polymer/issues"
+  },
+  "homepage": "https://github.com/fincluster/backbone-polymer"
+}
