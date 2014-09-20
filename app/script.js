@@ -54,38 +54,10 @@
 		},
 
 		initialize: function () {
-			this.template = _.template(
-					'<h2>Checkbox test</h2>' +
-					'<paper-checkbox id="paper-checkbox" label="Checkbox"></paper-checkbox><br />' +
-					'<input id="checkbox" label="Checkbox" type="checkbox"></paper-checkbox><br />' +
-					'<a id="link-4" href="javascript:void(0);">set isChecked true</a><br /><br />' +
-
-					'<paper-radio-group id="input-paper-radio-group">' +
-					'<paper-radio-button name="always" label="Always"></paper-radio-button>' +
-					'<paper-radio-button name="pluggedin" label="Only when plugged in"></paper-radio-button>' +
-					'</paper-radio-group><br />' +
-					'<a id="link-3" href="javascript:void(0);">set selectedIndex 1</a><br /><br />' +
-
-					'<paper-input id="paper-input-text" label="Type something"></paper-input><br />' +
-					'<input type="text" id="input-text" /><br />' +
-					'<select id="input-select"><option value="one">first</option><option value="two">second</option></select><br />' +
-					'<paper-dropdown valueattr="val" id="input-paper-dropdown">' +
-					'<paper-item val="one" label="First"></paper-item>' +
-					'<paper-item val="two" label="Second"></paper-item>' +
-					'</paper-dropdown>' +
-
-					'<br><a id="link-1" href="javascript:void(0);">set name "PAOLO"</a> - <a id="link-2" href="javascript:void(0);">set type "second"</a><br><br>' +
-
-					'<h2>Log</h2>' +
-					'<div id="log"></div>'
-			);
-
 			this.model = new MyModel();
 			this.render();
 		},
 		render: function () {
-			$(this.el).append(this.template(this));
-
 			var $log = $("#log", this.el);
 
 			this.model.on('change:name', function () {
